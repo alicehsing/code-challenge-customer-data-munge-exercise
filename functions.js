@@ -38,11 +38,16 @@ export function addAllAges(customers) {
 
 /* 
 Output: 
-4.5
+5.088888888888889
 */
 
 export function getAverageCoolFactor(customers) {
-    return true;
+    const sumCoolFactor = customers.reduce((acc, curr) => {
+        return acc + curr.cool_factor;
+    }, 0);
+
+    return sumCoolFactor / customers.length;
+
 }
 
 /* 
