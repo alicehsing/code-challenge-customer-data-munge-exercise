@@ -4,7 +4,9 @@ Output:
 */
 
 export function greetUsers(customers) {
-    return true;
+    const greetings = customers.map(item => 
+        `Hello ${item.first_name} ${item.last_name}`);
+    return greetings;
 }
 
 /* 
@@ -23,20 +25,29 @@ export function greetUsersOverAge60(customers) {
 
 /* 
 Output: 
-4532
+2125
 */
 
 export function addAllAges(customers) {
-    return true;
+    const sumAge = customers.reduce((acc, curr) => {
+        return acc + curr.age;
+    }, 0);
+
+    return sumAge;
 }
 
 /* 
 Output: 
-4.5
+5.088888888888889
 */
 
 export function getAverageCoolFactor(customers) {
-    return true;
+    const sumCoolFactor = customers.reduce((acc, curr) => {
+        return acc + curr.cool_factor;
+    }, 0);
+
+    return sumCoolFactor / customers.length;
+
 }
 
 /* 
@@ -50,7 +61,18 @@ Output:
 */
 
 export function getTotalOfEachGender(customers) {
-    return true;
+    
+    const countingHashMap = customers.reduce((accumulator, customer) => {
+        if(accumulator[customer.gender]) {
+            accumulator[customer.gender]++;
+        } else {
+            accumulator[customer.gender] = 1;
+        }
+
+        return accumulator;
+    }, {});
+
+    return countingHashMap;
 }
 
 /* 
@@ -64,7 +86,18 @@ Output:
 */
 
 export function getGenderBreakdownOfFordOwners(customers) {
-    return true;
+    const filteredFordArray = customers
+        .filter(item => item.car_make === 'Ford')
+        .reduce((accumulator, customer) => {
+            if(accumulator[customer.gender]) {
+                accumulator[customer.gender]++;
+            } else {
+                accumulator[customer.gender] = 1;
+            }
+            return accumulator;
+        }, {});
+
+    return filteredFordArray;
 }
 
 //////////////////////////////////////////////////////////
@@ -88,9 +121,27 @@ Output:
 }
 */
 
-export function getGenderBreakdownOfEachCar(customers) {
-    return true;
-}
+// export function getGenderBreakdownOfEachCar(customers) {
+//     const carBrandsArr = customers.map(customer => ({
+//         gender: customer.gender,
+//         brand: customer.car_make
+//     }));
+//     // if you can get an array of non-duplicate car brands . . .
+//     const breakdownsByBrand = carBrandsArr.reduce((acc, brand) => {
+//         const genderBreakdown = customers
+//             .reduce((accumulator, customer) => {
+//                 if(accumulator[customer.gender]) {
+//                     accumulator[customer.gender]++;
+//                 } else {
+//                     accumulator[customer.gender] = 1;
+//                 }
+//                 return accumulator;
+//             }, {});
+//         acc[brand] = genderBreakdown;
+//     }, {});
+
+//     return breakdownsByBrand;
+// }
 
 /* 
 Output: 
