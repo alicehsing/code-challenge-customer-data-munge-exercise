@@ -1,6 +1,6 @@
 // IMPORT MODULES under test here:
 import { 
-    greetUsersOverAge60, greetUsers, addAllAges, getAverageCoolFactor, getTotalOfEachGender, getGenderBreakdownOfFordOwners
+    greetUsersOverAge60, greetUsers, addAllAges, getAverageCoolFactor, getTotalOfEachGender, getGenderBreakdownOfFordOwners,
 } from '../functions.js';
 import customers from './data.js';
 

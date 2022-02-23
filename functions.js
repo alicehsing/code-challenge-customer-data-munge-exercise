@@ -121,9 +121,27 @@ Output:
 }
 */
 
-export function getGenderBreakdownOfEachCar(customers) {
-    return true;
-}
+// export function getGenderBreakdownOfEachCar(customers) {
+//     const carBrandsArr = customers.map(customer => ({
+//         gender: customer.gender,
+//         brand: customer.car_make
+//     }));
+//     // if you can get an array of non-duplicate car brands . . .
+//     const breakdownsByBrand = carBrandsArr.reduce((acc, brand) => {
+//         const genderBreakdown = customers
+//             .reduce((accumulator, customer) => {
+//                 if(accumulator[customer.gender]) {
+//                     accumulator[customer.gender]++;
+//                 } else {
+//                     accumulator[customer.gender] = 1;
+//                 }
+//                 return accumulator;
+//             }, {});
+//         acc[brand] = genderBreakdown;
+//     }, {});
+
+//     return breakdownsByBrand;
+// }
 
 /* 
 Output: 
