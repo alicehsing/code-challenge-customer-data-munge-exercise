@@ -61,7 +61,18 @@ Output:
 */
 
 export function getTotalOfEachGender(customers) {
-    return true;
+    
+    const countingHashMap = customers.reduce((accumulator, customer) => {
+        if(accumulator[customer.gender]) {
+            accumulator[customer.gender]++;
+        } else {
+            accumulator[customer.gender] = 1;
+        }
+
+        return accumulator;
+    }, {});
+
+    return countingHashMap;
 }
 
 /* 
