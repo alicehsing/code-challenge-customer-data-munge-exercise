@@ -1,6 +1,6 @@
 // IMPORT MODULES under test here:
 import { 
-    greetUsersOverAge60, greetUsers,
+    greetUsersOverAge60, greetUsers, addAllAges
 } from '../functions.js';
 import customers from './data.js';
 
@@ -85,10 +85,10 @@ test('greetUsersOverAge60', (expect) => {
     expect.deepEqual(actual, expected);
 });
 
-skip('addAllAges', (expect) => {
-    const expected = true;
+test('addAllAges', (expect) => {
+    const expected = 2125;
 
-    const actual = greetUsers();
+    const actual = addAllAges(customers);
 
     expect.equal(actual, expected);
 });

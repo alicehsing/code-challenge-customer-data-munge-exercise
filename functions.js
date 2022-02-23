@@ -25,11 +25,15 @@ export function greetUsersOverAge60(customers) {
 
 /* 
 Output: 
-4532
+2125
 */
 
 export function addAllAges(customers) {
-    return true;
+    const sumAge = customers.reduce((acc, curr) => {
+        return acc + curr.age;
+    }, 0);
+
+    return sumAge;
 }
 
 /* 
